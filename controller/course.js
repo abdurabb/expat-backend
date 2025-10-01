@@ -27,7 +27,7 @@ const getCourses = async (req, res) => {
 
         const [courses, totalItems] = await Promise.all([
             Course.find(query).skip(skip).limit(limit).select('courseName price discount level').sort({ createdAt: -1 }),
-            Course.countDocuments({})
+            Course.countDocuments(query)
         ])
 
         const totalPages = Math.ceil(totalItems / limit) || 1
