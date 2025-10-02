@@ -7,4 +7,6 @@ router.post('/', createCourse)
 router.get('/get-course', getCourses)
 router.get('/get-course-details', getCourseById)
 
+
+
 module.exports = router
